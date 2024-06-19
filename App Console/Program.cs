@@ -2,5 +2,7 @@
 Console.WriteLine("Hello, World!");
 Console.WriteLine("My name is Lafouine !");
 Console.WriteLine("Mine  is Philgood !");
+Console.WriteLine("Welcome Everybody !");
+
 
 Console.ReadLine();
