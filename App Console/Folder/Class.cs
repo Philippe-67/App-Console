@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace App_Console.Folder
 {
-    internal class Class
+   public  class Class
     {
+      
     }
 }
