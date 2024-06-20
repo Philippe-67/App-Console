@@ -48,7 +48,20 @@ for (var i = 0; i < nombreDeMotsEnChiffres; i++)
     listeMots.Add(nouveauMot);
 }
 
+string filePath = "C:\\repos\\";
+string fileName = "dictionary.txt";
+
 foreach (var mot in listeMots)
 {
     Console.WriteLine(mot.MotFr);
+
+    using (StreamWriter outputFile = new StreamWriter(Path.Combine(filePath, fileName), true))
+    {
+        outputFile.WriteLine(mot.MotFr);
+    }
 }
+
+// TODO
+// Check if the word already exists
+// Add the translation in english, in spanish
+// Refactor the code
