@@ -1,18 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using App_Console.Folder;
 
-using App_Console.Folder;
+Console.WriteLine("****************************************");
+Console.WriteLine("*                                      *");
+Console.WriteLine("*             BAC A SABLE              *");
+Console.WriteLine("*                                      *");
+Console.WriteLine("*        lafouine & autobusman         *");
+Console.WriteLine("*                                      *");
+Console.WriteLine("****************************************");
 
-Console.WriteLine("Hello, World!");
-Console.WriteLine("My name is Lafouine !");
-Console.WriteLine("Mine  is Philgood !");
-Console.WriteLine("Welcome Everybody !");
-
-Console.Write("Donne ton nom :");
+Console.Write("Donne ton nom : ");
 var askedName = Console.ReadLine();
 
-var bibi = new Class
+var newPerson = new Person
 {
-    Name = askedName
+    Firstname = askedName
 };
 
-Console.WriteLine($"Salut l'ami {bibi.Name}");
+Console.WriteLine($"Salut l'ami {newPerson.Firstname}");
