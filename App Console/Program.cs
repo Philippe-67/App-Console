@@ -51,16 +51,44 @@ for (var i = 0; i < nombreDeMotsEnChiffres; i++)
 string filePath = "C:\\repos\\";
 string fileName = "dictionary.txt";
 
+StreamWriter streamWriter = new StreamWriter(Path.Combine(filePath, fileName), true);
+
+// Ecrire les nouveaux mots dans la console et dans le dictionary.txt
 foreach (var mot in listeMots)
 {
-    Console.WriteLine(mot.MotFr);
+    Console.WriteLine($"La classe écrit : {mot.MotFr}");
 
-    using (StreamWriter outputFile = new StreamWriter(Path.Combine(filePath, fileName), true))
-    {
-        outputFile.WriteLine(mot.MotFr);
-    }
+    streamWriter.WriteLine(mot.MotFr);
+    //using (StreamWriter outputFile = new StreamWriter(Path.Combine(filePath, fileName), true))
+    //{
+    //    outputFile.WriteLine(mot.MotFr);
+    //}
 }
 
+streamWriter.Close();
+
+// Lire le fichier dictionnary.txt
+StreamReader inputFile = new StreamReader(Path.Combine(filePath, fileName));
+
+// Lire la première ligne
+var line = inputFile.ReadLine();
+
+// Continuer à lire tant que line n'est pas null
+while (line != null)
+{
+    // Ecrire la ligne dans la console
+    Console.WriteLine($"Le fichier écrit : {line}");
+
+    // Lire la ligne suivante
+    line = inputFile.ReadLine();
+}
+
+//Fermer le fichier dictionary.txt
+inputFile.Close();
+
+
+
+Console.WriteLine();
 // TODO
 // Check if the word already exists
 // Add the translation in english, in spanish
