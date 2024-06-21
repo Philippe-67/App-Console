@@ -19,6 +19,39 @@ var newPerson = new Person
 Console.WriteLine($"Salut l'ami {newPerson.Firstname}");
 Console.WriteLine();
 
+// Lecture du dictionnary.txt pour écrire dans une nouvelle classe Mot
+string filePath = "C:\\repos\\";
+string fileName = "dictionary.txt";
+
+var newListMot = new List<Mot>();
+
+StreamReader streamReader = new StreamReader(Path.Combine(filePath, fileName));
+
+// Lire la première ligne
+var line = streamReader.ReadLine();
+
+// Continuer à lire tant que line n'est pas null
+while (line != null)
+{
+    // Ecrire une nouvelle classe Mot
+
+    var newMot = new Mot();
+    newMot.MotFr = line;
+    newListMot.Add(newMot);
+
+    // Lire la ligne suivante
+    line = streamReader.ReadLine();
+}
+
+//Fermer le fichier dictionary.txt
+streamReader.Close();
+
+foreach (var mot in newListMot)
+{
+    Console.WriteLine($"Dans classe depuis fichier : {mot.MotFr}");
+}
+
+
 int nombreDeMotsEnChiffres = 666;
 
 while (nombreDeMotsEnChiffres < 1 || nombreDeMotsEnChiffres > 10)
@@ -48,9 +81,6 @@ for (var i = 0; i < nombreDeMotsEnChiffres; i++)
     listeMots.Add(nouveauMot);
 }
 
-string filePath = "C:\\repos\\";
-string fileName = "dictionary.txt";
-
 StreamWriter streamWriter = new StreamWriter(Path.Combine(filePath, fileName), true);
 
 // Ecrire les nouveaux mots dans la console et dans le dictionary.txt
@@ -71,16 +101,16 @@ streamWriter.Close();
 StreamReader inputFile = new StreamReader(Path.Combine(filePath, fileName));
 
 // Lire la première ligne
-var line = inputFile.ReadLine();
+var line2 = inputFile.ReadLine();
 
 // Continuer à lire tant que line n'est pas null
-while (line != null)
+while (line2 != null)
 {
     // Ecrire la ligne dans la console
-    Console.WriteLine($"Le fichier écrit : {line}");
+    Console.WriteLine($"Le fichier écrit : {line2}");
 
     // Lire la ligne suivante
-    line = inputFile.ReadLine();
+    line2 = inputFile.ReadLine();
 }
 
 //Fermer le fichier dictionary.txt
